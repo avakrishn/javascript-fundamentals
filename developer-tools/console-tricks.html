@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Console Tricks</title>
+  </head>
+  <body>
+    <p onclick="makeGreen()">Click To Make Me Green!</p>
+  </body>
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    /*
+      Console Tools:
+        - Visialize the make green function step by step when click on <p>
+        1. Inspect the p on the page
+        2. In elements (DOM) in console, right click then select break on > attribute modifications
+        3. Will put break points (debugger command) on all the attribute modifications that were made using the makeGreeen function so break points would be placed //1// and //2//
+        - will pause and show code and highlight line of code that is causing that attribute
+    */
+    function makeGreen() {
+      const p = document.querySelector('p'); // first paragraph on page
+      p.style.color = 'green'; //1//
+      p.style.fontSize = '50px'; //2//
+    }
+  </script>
+</html>
