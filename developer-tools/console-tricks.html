@@ -25,5 +25,44 @@
       p.style.color = 'green'; //1//
       p.style.fontSize = '50px'; //2//
     }
+
+    /*
+      Console Methods:
+    */
+
+    // Regular
+    console.log('hello');
+
+    // Interpolate messages into console.log
+
+    /* using %s and using another argument to be interpolated into %s (interpolate what you pass as 2nd argument into 1st argument)*/
+
+    // ES5
+    console.log('Hello I am a %s string!', 'sentence');
+
+    // ES6
+    const interpolate = 'sentence';
+    console.log(`Hello I am a ${interpolate} string!`);
+
+    // Styled
+
+    /* style text in a console.log with %c and then second argument is the style modification (apply any css to it)
+    - Will only style what is after the %c so could put the %c anywhere in the text*/
+
+    console.log(
+      '%c I am some great text',
+      'font-size: 30px; background:blue; color: white; '
+    );
+
+    // warning!
+    /* Give warning and stack trace to where it was called*/
+
+    console.warn('OH NOOOOO!');
+
+    // error
+    /*
+    Displays and error as well as a stack trace to where the error was called
+    */
+    console.error('New Error!');
   </script>
 </html>
