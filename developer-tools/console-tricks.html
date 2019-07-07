@@ -64,5 +64,19 @@
     Displays and error as well as a stack trace to where the error was called
     */
     console.error('New Error!');
+
+    // info
+    /* In console it will be preceded with an i info badge*/
+    console.info('Fun Fact: Crocodiles eat 3-4 people per year');
+
+    // testing
+    /* Checks if assertions are true nothing happens, if assertion is false then the second argument is displayed (thrown) as the error */
+    const p = document.querySelector('p');
+    console.assert(
+      p.classList.contains('paragraph'),
+      'You did not select the right Element!'
+    );
+    console.assert(1 === 1, 'That is wrong');
+    console.assert(1 === 2, 'That is wrong');
   </script>
 </html>
