@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pause Count: Solved</title>
+  </head>
+  <body>
+    <div>
+      When you click on Count, in the console numbers should start incrementing
+      each second
+    </div>
+    <div>
+      If I then click on Hello, the count will be paused and 'Hello' will be
+      displayed
+    </div>
+    <div>
+      If I click on Count again, the numbers should continue to increment each
+      second
+    </div>
+    <div>Open the Console</div>
+  </body>
+  <script>
+    // If I want to click on Count, and then Hello, then Count will pause for Hello to jump in
+    let i = 0;
+    let interval = () => {
+      console.log(i);
+      i++;
+    };
+    let setI;
+    const countButton = document.createElement('button');
+    countButton.innerText = 'Count';
+    countButton.addEventListener('click', () => {
+      setI = setInterval(interval, 1000);
+    });
+
+    document.body.appendChild(countButton);
+
+    const helloButton = document.createElement('button');
+    helloButton.innerText = 'Hello';
+    helloButton.addEventListener('click', () => {
+      console.log('Hello');
+      clearInterval(setI, 1000);
+    });
+
+    document.body.appendChild(helloButton);
+  </script>
+</html>
