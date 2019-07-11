@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>This: Solved</title>
+  </head>
+  <body>
+    <div>Make it so that when you click on Go button, it will log 70</div>
+    <div>Open the console</div>
+  </body>
+  <script>
+    // one way:
+    var car = {
+      speed: 50,
+      getSpeed: function() {
+        return this.speed;
+      },
+      init: function() {
+        const button = document.createElement('button');
+        button.innerText = 'Go';
+
+        button.addEventListener('click', () => {
+          console.log(this.getSpeed());
+        }); // use arrow function to bind to this to outer scope
+
+        document.body.appendChild(button);
+      }
+    };
+
+    car.init();
+    car.speed = 70;
+    console.log(car.getSpeed());
+
+    // Make it so that when you click on 'go', it'll log 70
+
+    // another way:
+
+    // var car = {
+    //   speed: 50,
+    //   getSpeed: function() {
+    //     return this.speed;
+    //   },
+    //   init: function(){
+    //     let that = this;
+    //     const button = document.createElement('button');
+    //     button.innerText = 'Go';
+    //     button.addEventListener('click', function(){
+    //       console.log(that.getSpeed());
+    //     });
+
+    //     document.body.appendChild(button);
+    //   }
+    // }
+
+    // car.init();
+    // car.speed = 70;
+    // console.log(car.getSpeed());
+  </script>
+</html>
